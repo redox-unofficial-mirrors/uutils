@@ -714,8 +714,7 @@ checksum = "31a7a908b8f32538a2143e59a6e4e2508988832d5d4d6f7c156b3cbc762643a5"
 [[package]]
 name = "filetime"
 version = "0.2.14"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1d34cfa13a63ae058bfa601fe9e313bbdb3746427c1459185464ce0fcf62e1e8"
+source = "git+https://github.com/alexcrichton/filetime?rev=238928084b5b94b177d689cf84100c521adfb7d3#238928084b5b94b177d689cf84100c521adfb7d3"
 dependencies = [
  "cfg-if 1.0.0",
  "libc",
@@ -1852,13 +1851,11 @@ dependencies = [
 [[package]]
 name = "termsize"
 version = "0.1.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5e86d824a8e90f342ad3ef4bd51ef7119a9b681b0cc9f8ee7b2852f02ccd2517"
+source = "git+https://github.com/softprops/termsize?rev=247add722759bd834e2b542885932e42c8cfff76#247add722759bd834e2b542885932e42c8cfff76"
 dependencies = [
  "atty",
  "kernel32-sys",
  "libc",
- "termion",
  "winapi 0.2.8",
 ]
 

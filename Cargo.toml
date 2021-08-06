@@ -64,7 +64,6 @@ feat_common_core = [
     "ls",
     "mkdir",
     "mktemp",
-    "more",
     "mv",
     "nl",
     "numfmt",
@@ -98,7 +97,6 @@ feat_common_core = [
     "unexpand",
     "uniq",
     "wc",
-    "yes",
 ]
 # "feat_Tier1" == expanded set of utilities which can be built/run on the usual rust "Tier 1" target platforms (ref: <https://forge.rust-lang.org/release/platform-support.html>)
 feat_Tier1 = [
@@ -106,10 +104,12 @@ feat_Tier1 = [
     #
     "arch",
     "hostname",
+    "more", # crossterm crate fails to build on redox
     "nproc",
     "sync",
     "touch",
     "whoami",
+    "yes" # zero-copy feature fails to build on redox
 ]
 ## (primary platforms) feature sets
 # "feat_os_macos" == set of utilities which can be built/run on the MacOS platform
@@ -379,3 +379,7 @@ unix_socket = "0.5.0"
 [[bin]]
 name = "coreutils"
 path = "src/bin/coreutils.rs"
+
+[patch.crates-io]
+filetime = { git = "https://github.com/alexcrichton/filetime", rev = "238928084b5b94b177d689cf84100c521adfb7d3" }
+termsize = { git = "https://github.com/softprops/termsize", rev = "247add722759bd834e2b542885932e42c8cfff76" }
