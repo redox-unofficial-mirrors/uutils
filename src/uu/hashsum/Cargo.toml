@@ -15,7 +15,8 @@ edition = "2018"
 path = "src/hashsum.rs"
 
 [dependencies]
-digest = "0.6.2"
+# FIXME: Seems like most of 0.6.x version are yanked. We should update ASAP.
+digest = "0.6"
 clap = { version = "2.33", features = ["wrap_help"] }
 hex = "0.2.0"
 libc = "0.2.42"
